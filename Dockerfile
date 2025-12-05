@@ -1,5 +1,5 @@
 # FROM ubuntu:latest
-FROM cm2network/steamcmd:latest
+FROM docker.io/sonroyaalmerol/steamcmd-arm64:latest
 
 
 # Install SteamCMD
@@ -24,6 +24,15 @@ ADD --chown=steam ./scripts/aniv-ds.sh .
 # Expose ports
 EXPOSE 7776-7779/tcp
 EXPOSE 7776-7779/udp
+
+# Box64
+ENV BOX64_DYNAREC_BIGBLOCK=0
+ENV BOX64_DYNAREC_SAFEFLAGS=2
+ENV BOX64_DYNAREC_STRONGMEM=3
+ENV BOX64_DYNAREC_FASTROUND=0
+ENV BOX64_DYNAREC_FASTNAN=0
+ENV BOX64_DYNAREC_X87DOUBLE=1
+ENV BOX64_PREFER_EMULATED=1
 
 # Profiler... Could be optimized
 #EXPOSE 55000-55495/tcp
