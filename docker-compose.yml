@@ -34,3 +34,4 @@ services:
 networks:
   aneurism4_network:
     name: aneurism4_network
+    enable_ipv6: true
