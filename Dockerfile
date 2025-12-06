@@ -39,6 +39,10 @@ ENV ARM64_DEVICE=adlink
 EXPOSE 27015-27050/tcp
 EXPOSE 27015-27050/udp
 
+# I dont know
+EXPOSE 50315/udp
+EXPOSE 34227/tcp
+
 # Profiler... Could be optimized
 # EXPOSE 55000-55495/tcp
 # EXPOSE 55000-55495/udp
