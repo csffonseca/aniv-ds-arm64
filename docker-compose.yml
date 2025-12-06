@@ -4,16 +4,16 @@ services:
     ports:
       - "7776-7779:7776-7779/tcp"
       - "7776-7779:7776-7779/udp"
-      - "55000-55495:55000-55495/tcp"
-      - "55000-55495:55000-55495/udp"
-      - "54997:54997/udp"
-      - "54997:54997/tcp"
-      - "34997:34997/udp"
-      - "34997:34997/tcp"
-      - "35000:35000/udp"
-      - "35000:35000/tcp"
-      - "4600:4600/udp"
-      - "4600:4600/tcp"
+      # - "55000-55495:55000-55495/tcp"
+      # - "55000-55495:55000-55495/udp"
+      # - "54997:54997/udp"
+      # - "54997:54997/tcp"
+      # - "34997:34997/udp"
+      # - "34997:34997/tcp"
+      # - "35000:35000/udp"
+      # - "35000:35000/tcp"
+      # - "4600:4600/udp"
+      # - "4600:4600/tcp"
 
     tty: true
     restart: unless-stopped
@@ -22,7 +22,13 @@ services:
       #- BETA=
     stdin_open: true
     container_name: aniv-ds
+    networks:
+      - aneurism4_network
     user: "1000:1000"
     volumes:
       - "./ds:/home/steam/aniv-ds/"
       - "./config:/home/steam/.config/unity3d/Vellocet/ANEURISM IV"
+
+networks:
+  aneurism4_network:
+    name: aneurism4_network
