@@ -15,7 +15,7 @@ FROM docker.io/sonroyaalmerol/steamcmd-arm64:latest
 # Add server files and entrypoint script
 USER 0
 RUN apt update
-RUN apt install -y --no-install-recommends --no-install-suggests sqlite3 libsqlite3-dev
+RUN apt install -y --no-install-recommends --no-install-suggests sqlite3 libsqlite3-dev net-tools
 USER 1000
 WORKDIR /home/steam/
 ADD --chown=steam ./scripts/entrypoint.sh .
@@ -34,6 +34,10 @@ ENV BOX64_DYNAREC_FASTNAN=0
 ENV BOX64_DYNAREC_X87DOUBLE=1
 ENV BOX64_PREFER_EMULATED=1
 ENV ARM64_DEVICE=adlink
+
+# Steam Ports
+EXPOSE 27015-27050/tcp
+EXPOSE 27015-27050/udp
 
 # Profiler... Could be optimized
 # EXPOSE 55000-55495/tcp
