@@ -36,12 +36,8 @@ ENV BOX64_PREFER_EMULATED=1
 ENV ARM64_DEVICE=adlink
 
 # Steam Ports
-EXPOSE 27015-27050/tcp
-EXPOSE 27015-27050/udp
-
-# I dont know
-EXPOSE 50315/udp
-EXPOSE 34227/tcp
+EXPOSE 27015/tcp
+EXPOSE 27015/udp
 
 # Profiler... Could be optimized
 # EXPOSE 55000-55495/tcp
